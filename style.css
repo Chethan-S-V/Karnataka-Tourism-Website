@@ -177,20 +177,5 @@ nav a:hover {
     }
 }
 
-/* Full-cover section */
-.full-cover-section {
-position: absolute;
-bottom: 0;
-top: 95%;
-border-radius:50px 50px 0 0;
-backdrop-filter: blur(10px);
-border-color: #F8F8FF;
-width: 100%;
-height: 100vh;
-background-color: #FFD89E;
-overflow: hidden;
-transform: translateY(0); /* Default position */
-transition: transform 0.2s ease-out; /*Smooth animation for the effect */
-background-image: linear-gradient(rgba(39,39,39,0.6),rgba(48,47,47,0));
-} 
+ 
 
