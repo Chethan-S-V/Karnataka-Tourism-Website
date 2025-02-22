@@ -177,5 +177,17 @@ nav a:hover {
     }
 }
 
+.ovrimg{
+   width: 100vw;
+   text-align: center;
+}
+.ovrimg img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
  
 
