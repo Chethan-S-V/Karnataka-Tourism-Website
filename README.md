@@ -12,7 +12,7 @@ Responsive Design – Optimized for various devices, ensuring smooth accessibili
 Engaging Content – Highlights hidden gems, local traditions, and unforgettable travel experiences in Karnataka.
 Call-to-Action for Travel Bookings – Encourages users to explore and book guided experiences in Karnataka.
 
-Demo:
+Present Output:
 
 ![Image](https://github.com/user-attachments/assets/5b5b2d1b-1e80-47f3-b71d-a0634cd3e85f)
 ![Image](https://github.com/user-attachments/assets/1c200706-09cb-40e4-8868-e6e88041f2cf)
