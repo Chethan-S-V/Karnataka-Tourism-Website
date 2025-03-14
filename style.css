@@ -177,6 +177,74 @@ nav a:hover {
     }
 }
 
+   /* Image Slider Section */
+        .image-slider-section {
+            width: 100%;
+            height:3in; /* 3inches height */
+            overflow: hidden;
+            position: relative;
+            background-color: #f0f0f0; /* Optional: Add a background color */
+        }
+        
+        .slider-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 5s ease-in-out;
+        }
+        
+        .slide img:hover {
+            transform: scale(1.2); /* Zoom-in effect on hover */
+        }
+        
+        /* Navigation Buttons */
+        .prev-btn,
+        .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 10;
+        }
+        
+        .prev-btn {
+            left: 10px;
+        }
+        
+        .next-btn {
+            right: 10px;
+        }
+        
+        .prev-btn:hover,
+        .next-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
 
 
  
