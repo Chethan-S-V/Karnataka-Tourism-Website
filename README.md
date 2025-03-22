@@ -2,7 +2,7 @@
 
 Karnatism is a frontend web project that showcases the rich heritage, culture, and natural beauty of Karnataka. The homepage features a visually appealing design with an ancient temple background, highlighting the historical significance of the region. The website provides users with insights into Karnataka’s traditions, historical sites, and travel experiences. It includes navigation options like "Our Guides" and "Get in Touch," along with sign-in and booking features, making it an engaging platform for travelers and culture enthusiasts.
 
-Features of Karnatism
+Features of Karnatism :
 
 Beautiful UI with Karnataka’s Heritage Theme – A visually rich interface featuring historical architecture to create an immersive experience.
 Informative Homepage – Provides an introduction to Karnataka’s culture, history, and travel experiences.
