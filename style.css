@@ -300,3 +300,21 @@ background-color: #f0f0f0; /* Optional: Add a background color */
         transform: translate(-50%, -50%);
     }
 } */
+
+ .cards{
+        height:80vh;
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .video{
+        height: 80vh;
+        width: 100%;
+        
+    }
+
+    .footer{
+        height:40vh;
+        width: 100%;
+        background-color: #05141F;
+    }
