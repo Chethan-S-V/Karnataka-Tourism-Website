@@ -13,6 +13,13 @@
      }
  });
 
+
+
+
+
+
+
+//Images slider Start//
  // JavaScript for Image Slider
 const slider = document.querySelector('.slider');
 const slides = document.querySelectorAll('.slide');
@@ -44,3 +51,37 @@ prevBtn.addEventListener('click', prevSlide);
 
 // Optional: Auto-slide functionality
 setInterval(nextSlide, 5000); // Change slide every 5 seconds
+// Image Slider End//
+
+
+
+
+
+
+
+
+//Video with autoplay and volume on/off //
+const video = document.getElementById('myVideo');
+    const muteButton = document.getElementById('muteButton');
+
+    // Intersection Observer to detect visibility
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.play(); // Play when in view
+            } else {
+                video.pause(); // Pause when out of view
+            }
+        });
+    }, { threshold: 0.5 }); // 50% visibility required
+
+    observer.observe(video);
+
+    // Mute/Unmute functionality
+    muteButton.addEventListener('click', () => {
+        video.muted = !video.muted;
+        muteButton.innerHTML = video.muted 
+            ? '<i class="fas fa-volume-mute"></i>' 
+            : '<i class="fas fa-volume-up"></i>';
+    });
+    // Video End//
