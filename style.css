@@ -39,13 +39,14 @@ html{
        background: rgba(0, 0, 0, 0.4);
    }
    
-   .logo {
+   .logo a{
        font-size: 2.5rem;
        font-family: 'Cinzel', serif;
        font-weight: bold;
        text-transform: uppercase;
        letter-spacing: 1px;
        color: #FFD89E;
+       text-decoration: none;
    }
    
    nav a {
