@@ -21,7 +21,13 @@
        position: relative;
    }
    
-   /* Header styles */
+  
+  
+  
+  
+  
+  
+                                     /* Header Start */
    header {
        display: flex;
        justify-content: space-between;
@@ -67,7 +73,7 @@
        transition: 0.5s;
    }
    
-   /* Profile section */
+                             /* Profile section Start*/
    .profile {
        position: relative;
        display: inline-block;
@@ -88,7 +94,7 @@
        box-shadow: 0 0 15px 5px rgba(255, 216, 158, 0.6); /* Glow effect */
    }
    
-   /* Dropdown menu */
+                                 /* Dropdown menu Start */
    .dropdown-menu {
        position: absolute;
        top: 70px; /* Adjust based on the profile image size */
@@ -121,7 +127,16 @@
        transform: translateX(5px);
    }
    
-   /* Middle section */
+
+                                /* Dropdown menu End */
+                                /* Profile sectioin end */
+                                /* Header end */
+
+
+
+
+
+                                    /* Middle section Start*/
    .middle-section {
        position: absolute;
        top: 50%; /* Center vertically */
@@ -195,7 +210,13 @@
         background-image: linear-gradient(rgba(39,39,39,0.6),rgba(48,47,47,0));
    } 
    
-   /* Image Slider Section */
+                                /* Middle section end */
+
+
+
+
+
+                                    /* Image Slider Section Start*/
    .image-slider-section {
        width: 100%;
        height:60vh; /* 3inches height */
@@ -302,13 +323,208 @@
        }
    } */
 
-   .cards{
-       height:80vh;
-       width: 100%;
-       background-color: #05141F;
-       border-top: 1px solid #ffffff;
-       border-bottom: 1px solid #ffffff;
-   }
+
+                                /* Image slider section end */
+
+
+
+
+
+
+                                    /* Cards section start */
+   :root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --font-sans: 'Rubik', sans-serif;
+    --font-serif: 'Cardo', serif;
+  }
+  
+  .page-content {
+    height: 35%;
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    background-color: #05141F;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
+  
+  .page-content::-webkit-scrollbar {
+    height: 10px;
+  }
+  
+  .page-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+  }
+  
+  .card {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    position: relative;
+    flex: 0 0 300px;
+    height: 380px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 1rem;
+    color: whitesmoke;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1),
+                0 8px 12px rgba(0,0,0,0.1),
+                0 16px 24px rgba(0,0,0,0.1);
+  }
+  
+  .card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-position: center;
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .card:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+    transform: translateY(-50%);
+    transition: transform calc(var(--d) * 2) var(--e);
+    z-index: 0;
+  }
+  
+  /* Background images for each card */
+  .card:nth-child(1)::before {
+    background-image: url('assets/images/Trekking\ card\ image.jpg');
+  }
+  .card:nth-child(2)::before {
+    background-image: url('assets/images/coastal.jpg');
+  }
+  .card:nth-child(3)::before {
+    background-image: url('assets/images/safaries.jpg');
+  }
+  .card:nth-child(4)::before {
+    background-image: url('assets/images/historical\ forts.jpg');
+  }
+  .card:nth-child(5)::before {
+    background-image: url('assets/images/temples\ card.jpg');
+  }
+  .card:nth-child(6)::before {
+    background-image: url('assets/images/explore\ karnataka.jpg');
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    transition: transform var(--d) var(--e);
+  }
+  
+  .content > * + * {
+    margin-top: 1rem;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .copy {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.35;
+    text-align: center;
+  }
+  
+  .btn {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #333;
+  }
+  
+  @media (hover: hover) {
+    .card:after {
+      transform: translateY(0);
+    }
+  
+    .content {
+      transform: translateY(calc(100% - 4.5rem));
+    }
+  
+    .content > *:not(.title) {
+      opacity: 0;
+      transform: translateY(1rem);
+      transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+    }
+  
+    .card:hover,
+    .card:focus-within {
+      align-items: center;
+    }
+  
+    .card:hover::before,
+    .card:focus-within::before {
+      transform: translateY(-4%);
+    }
+  
+    .card:hover::after,
+    .card:focus-within::after {
+      transform: translateY(-50%);
+    }
+  
+    .card:hover .content,
+    .card:focus-within .content {
+      transform: translateY(0);
+    }
+  
+    .card:hover .content > *:not(.title),
+    .card:focus-within .content > *:not(.title) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: calc(var(--d) / 8);
+    }
+  }
+  
+
+                                    /* Cards Section end */
+
+
+
+
+
+                                        /* Video section Start */
 
    .video-section {
         width: 103.5%;
@@ -346,9 +562,16 @@ video {
     background: rgba(255, 255, 255, 0.3);
 }
 
+                                /* Video section end */
+
+
+
+
+                                    /* Footer start*/
+
 
    .footer{
-       height:40vh;
+       height:20%;
        width: 100%;
        background-color: #05141F;
        border-top: 1px solid #ffffff;
@@ -358,16 +581,61 @@ video {
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
    .footer h1{
-    font-family: "Roboto", sans-serif;
-  font-size:2.5rem;
-  font-weight: bold;
+    font-family: 'Cinzel', serif;
+    font-size:2.5rem;
+    font-weight: bold;
     color: #FFD89E;
+    display: inline-block;
     text-align: center;
-    border-top: 1px solid #ffffff;
-    border-bottom: 3px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
     margin-left: 40%;
-    text-align: center;
     width: 20%;
+    
    }
 
-   
+   .footer p{
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align:center;
+    margin-left:45%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    border-bottom: 1px solid #FFD89E;
+    width: 10%;
+
+   }
+
+   .social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+   }
+
+   .social-icons a{
+    color: #FFD89E;
+    font-size: 30px;
+    padding: 12px;
+    transition: transform 0.5s ease, background-color 0.5s;
+    transition: color 0.3s, transform 0.3s;
+   }
+
+   .social-icons a:hover{
+    color: #ffffff;
+    transform:scale(1.2);
+       text-shadow: 0 0 10px #FFD89E, 0 0 20px #FFD89E, 0 0 30px #FFD89E; /* Glow effect */
+       transition: 0.5s;
+   }
+
+   .copyright{
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 1%;
+   }
+
+
+
+                            /* Footer End */
