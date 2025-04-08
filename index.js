@@ -85,3 +85,10 @@ const video = document.getElementById('myVideo');
             : '<i class="fas fa-volume-up"></i>';
     });
     // Video End//
+
+
+    // document.querySelectorAll('.social-icons a').forEach(link => {
+    //     link.addEventListener('click', () => {
+    //       console.log(`Navigating to: ${link.href}`);
+    //     });
+    //   });
