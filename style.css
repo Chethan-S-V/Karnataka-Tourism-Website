@@ -409,7 +409,7 @@
   
   /* Background images for each card */
   .card:nth-child(1)::before {
-    background-image: url('assets/images/Trekking\ card\ image.jpg');
+    background-image: url('assets/images/Trekking-card.JPG');
   }
   .card:nth-child(2)::before {
     background-image: url('assets/images/coastal.jpg');
