@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Karnataka Coastal Beauty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Cinzel:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #d0e7d2, #f0f4c3); /* Nature soft colors */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Main Header */
+    header.main-header {
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #006994, #0099cc); /* Coastal blue-green */
+      padding: 40px 20px 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .main-header h1 {
+      font-size: 2.8rem;
+      font-family: 'Cinzel', serif;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #ffffff;
+    }
+
+    .main-header p {
+      font-size: 1.2rem;
+      text-shadow: 0 0 5px #ffffff;
+    }
+
+    /* Section Header */
+    .section-header {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2rem;
+      font-family: 'Cinzel', serif;
+      color: #006994;
+      text-shadow: 0 0 8px #ffffff;
+    }
+
+    /* Coastal Section */
+    section.coastal-section {
+      background-color: #e0f7fa; /* Soft oceanic background color */
+      padding: 40px 20px;
+      flex-grow: 1;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 0;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.8); /* Lighter background */
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 153, 204, 0.6); /* Soft coastal blue glow */
+      overflow: hidden;
+      transform: scale(0.95);
+      transition: all 0.3s ease;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      backdrop-filter: blur(5px);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 153, 204, 0.9); /* Highlighted glow on hover */
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      filter: brightness(70%) contrast(1.2); /* Slight overlay effect for better color integration */
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+      color: #2c3e50;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .card button {
+      padding: 10px 20px;
+      background: #006994;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .card button a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .card button:hover {
+      background: #004d66;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer */
+    section.footer {
+      background-color: #05141F;
+      border-top: 1px solid #ffffff;
+      border-bottom: 2px solid #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #FFD89E;
+      border-left: 1px solid #ffffff;
+      border-right: 1px solid #ffffff;
+      display: inline-block;
+      padding: 0 20px;
+      margin-bottom: 15px;
+    }
+
+    .footer p {
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      display: inline-block;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #FFD89E;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      color: #FFD89E;
+      font-size: 30px;
+      padding: 12px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #FFD89E, 0 0 20px #FFD89E, 0 0 30px #FFD89E;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #ffffff;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .footer h1, .footer p {
+        width: auto;
+        margin: 10px auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <h1>Karnataka Coastal Beauty</h1>
+    <p>Explore the most stunning coastal destinations in Karnataka.</p>
+  </header>
+
+  <!-- Coastal Beaches Section -->
+  <section class="coastal-section">
+    <h2 class="section-header">Karnataka's Beautiful Coastal Beaches</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="assets/images/Gokarna Beach.webp" alt="Gokarna Beach">
+        <div class="card-content">
+          <h3>Gokarna Beach</h3>
+          <p>Relax on golden sands surrounded by cliffs, temples, and peaceful sunsets at Gokarna.</p>
+          <button><a href="gokarna-CB.html">Explore</a></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/images/Kapu Beach.jpg" alt="Kapu Beach">
+        <div class="card-content">
+          <h3>Kapu Beach</h3>
+          <p>Walk along serene shores and climb the lighthouse for breathtaking coastal views at Kapu.</p>
+          <button><a href="ticket.html">Launching Shortly</a></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/images/Malpe Beach.jpeg" alt="Malpe Beach">
+        <div class="card-content">
+          <h3>Malpe Beach</h3>
+          <p>Enjoy clean sands, thrilling water sports, and a boat trip to St. Mary’s Island at Malpe.</p>
+          <button><a href="ticket.html">Launching Shortly</a></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="footer">
+    <h1>Karnatism</h1><br>
+    <p>Follow Us</p>
+    <div class="social-icons">
+      <a href="https://github.com/Chethan-S-V" target="_blank" class="icon github"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com" target="_blank" class="icon twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/chethan_gowda_instaofficial/" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:chethangowda.1922@gmail.com" target="_blank" class="icon email"><i class="fas fa-envelope"></i></a>
+      <a href="https://youtube.com" target="_blank" class="icon youtube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="copyright">
+      2025 &copy; Karnatism. All rights reserved.
+    </div>
+  </section>
+
+</body>
+</html>

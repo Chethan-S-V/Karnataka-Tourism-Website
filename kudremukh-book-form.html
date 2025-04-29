@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(#89f7fe, #66a6ff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 300px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Your Ticket</h1>
+    <form action="gen-tic.php" method="POST">
+        <input type="text" name="name" placeholder="Enter your Name as per ID" required>
+        <input type="text" name="tour" value="Kudremukh Trek" readonly>
+        <input type="text" name="validation_" value="10/05/2025" readonly>
+        <select name="seat_type" required>
+            <option value="Sleeper AC">Sleeper AC</option>
+            <!-- <option value="Seater Non-AC">Seater Non-AC</option> -->
+        </select>
+        <input type="text" name="validation_time" value="10:00 PM" readonly>
+        <button type="submit">Book Now</button>
+    </form>
+</body>
+</html>

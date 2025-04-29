@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About Us - Karnatism</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      overflow-x: hidden;
+    }
+
+    /* Full-screen background image with overlay */
+    .background-image {
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(rgba(39, 39, 39, 0.6), rgba(48, 47, 47, 0)), url('./assets/images/Hampi.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      color: #FFD89E;
+      z-index: 1000;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+      margin: 0 3rem;
+      border-radius: 100px;
+      backdrop-filter: blur(5px);
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .logo a {
+      font-size: 2.5rem;
+      font-family: 'Cinzel', serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #FFD89E;
+      text-decoration: none;
+    }
+    nav a {
+      color: #FFD89E;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      transition: color 0.3s, transform 0.3s;
+    }
+    nav a:hover {
+      color: #AE794D;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #FFD89E, 0 0 20px #FFD89E, 0 0 30px #FFD89E;
+      transition: 0.5s;
+    }
+
+    /* Profile */
+    .profile {
+      position: relative;
+      display: inline-block;
+    }
+    .profile img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px 5px rgba(255, 216, 158, 0.6);
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      padding: 1rem;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      z-index: 100;
+    }
+    .dropdown-menu.active {
+      display: flex;
+    }
+    .dropdown-menu a {
+      color: #FFD89E;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .dropdown-menu a:hover {
+      background: #FFD89E;
+      color: #333;
+      transform: translateX(5px);
+    }
+
+    /* Middle Section - Welcome Text */
+    .middle-section {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #F8F8FF;
+      z-index: 1;
+    }
+    .middle-section h1 {
+      font-size: 3.5rem;
+      font-family: 'Playfair Display', serif;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+      animation: fadeSlideDown 2s ease-out forwards;
+      opacity: 0;
+    }
+    .middle-section p {
+      font-size: 1.2rem;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 1rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      animation: fadeSlideUp 2.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeSlideDown {
+      0% { opacity: 0; transform: translateY(-50px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeSlideUp {
+      0% { opacity: 0; transform: translateY(50px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+
+    /* MAIN-CONTAINER */
+    .main-container {
+      background: #ffffff;
+      padding: 80px 20px;
+      /* margin-top: 100vh; Push after background image */
+      animation: slideFadeIn 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes slideFadeIn {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .main-container .about-header h1 {
+      font-size: 3rem;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .main-container .about-header p {
+      font-size: 1.2rem;
+      color: #666;
+      line-height: 1.8;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+    }
+    .about-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+    .about-details h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-top: 30px;
+    }
+    .about-details p, .about-list p {
+      font-size: 1.1rem;
+      color: #666;
+      text-align: center;
+      max-width: 900px;
+    }
+    .about-list ul {
+      list-style: disc;
+      text-align: left;
+      padding-left: 40px;
+    }
+    .about-list li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Footer */
+    section.footer {
+      background-color: #05141F;
+      padding: 40px 20px;
+      text-align: center;
+      /* margin-top: 60px; */
+    }
+    .footer h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #FFD89E;
+      margin-bottom: 15px;
+    }
+    .footer p {
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    .social-icons a {
+      color: #FFD89E;
+      font-size: 30px;
+      padding: 12px;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ffffff;
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #FFD89E;
+    }
+    .copyright {
+      font-size: 0.9rem;
+      color: #ffffff;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-image">
+    <!-- Header -->
+    <header>
+      <div class="logo"><a href="index.html">KARNATISM</a></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="OG.html">Our Guides</a>
+        <a href="Contact.html">Get in Touch</a>
+        <a href="About.html">About Us</a>
+      </nav>
+      <div class="profile">
+        <img src="./assets/images/profileimg.png" alt="Profile Image" id="profileImage">
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="#BP">Booked Packages</a>
+          <a href="login.php">Sign Out</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Middle Section -->
+    <section class="middle-section">
+        <h1>Welcome to Karnatism</h1>
+        <p>
+            Discover the beauty of Karnataka – a land rich heritage and natural beauty.
+            Let us guide you through the rich culture, history, and natural beauty of this enchanting region.
+            Explore the hidden gems, connect with local traditions, and immerse yourself in the spirit of Karnatism.
+            Karnatism offers unforgettable experiences for every traveller.
+        </p>
+    </section>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="about-header">
+      <h1>About Karnatism</h1>
+      <p>Welcome to Karnatism, your go-to source for discovering the hidden gems of Karnataka. Our goal is to provide you with the best tourism experiences, enriched by knowledgeable guides and seamless services, making every moment of your journey unforgettable.</p>
+    </div>
+
+    <div class="about-details">
+      <h2>Our Experience</h2>
+      <p>With years of experience in the tourism industry, Karnatism has become the trusted partner of many tourists exploring Karnataka. Our expert guides, local knowledge, and personalized approach ensure that every tour is unique and memorable.</p>
+
+      <h2>Our Expert Guides</h2>
+      <p>Our team consists of experienced, passionate, and certified guides who ensure that you explore not only the famous landmarks but also the hidden culture, history, and spirit of Karnataka.</p>
+
+      <h2>Our Partners</h2>
+      <div class="about-list">
+        <p>We collaborate with top-tier service providers to make your trip smooth and enjoyable:</p>
+        <ul>
+          <li><strong>Transportation:</strong> Comfortable luxury buses and private cars.</li>
+          <li><strong>Accommodation:</strong> Best hotels and resorts across Karnataka.</li>
+          <li><strong>Dining:</strong> Authentic flavors curated from top-rated restaurants.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <section class="footer">
+    <h1>KARNATISM</h1>
+    <p>Follow Us</p>
+    <div class="social-icons">
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:example@example.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="copyright">
+      2025 &copy; Karnatism. All rights reserved.
+    </div>
+  </section>
+  <script src="index.js"></script>
+</body>
+</html>
