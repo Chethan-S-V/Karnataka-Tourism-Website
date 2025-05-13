@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Karnatism - Tourism</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+       @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@600&family=Playfair+Display:wght@700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+
+
+html{
+        scroll-behavior: smooth;   
+       
+   }
+       
+       body {
+       font-family: 'Georgia', serif;
+       margin: 0;
+       padding: 0;
+       background-color: #f4f4f9;
+       overflow-x: hidden;
+   }
+   
+   /* Full-screen background image with overlay */
+   .background-image {
+       width: 100%;
+       height: 100vh;
+       background-image: linear-gradient(rgba(39, 39, 39, 0.6), rgba(48, 47, 47, 0)), url('./assets/images/Hampi.jpg'); /* Replace with your image path */
+       background-size: cover;
+       background-position: center;
+       position: relative;
+   }
+   
+  
+  
+  
+  
+  
+  
+                                     /* Header Start */
+   header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 1.5rem 3rem;
+       color: #FFD89E;
+       z-index: 1000;
+       position: absolute;
+       top: 20px;
+       left: 0;
+       right: 0;
+       margin: 0 3rem;
+       border-radius: 100px;
+       backdrop-filter: blur(5px);
+       background: rgba(0, 0, 0, 0.4);
+   }
+   
+   .logo a{
+       font-size: 2.5rem;
+       font-family: 'Cinzel', serif;
+       font-weight: bold;
+       text-transform: uppercase;
+       letter-spacing: 1px;
+       color: #FFD89E;
+       text-decoration: none;
+   }
+   
+   nav a {
+       color: #FFD89E;
+       text-decoration: none;
+       font-size: 1.2rem;
+       font-weight: 600;
+       font-family: 'Montserrat', sans-serif;
+       padding: 0.5rem 1rem;
+       border-radius: 30px;
+       transition: color 0.3s, transform 0.3s;
+   }
+   
+   nav a:hover {
+       color: #AE794D;
+       transform: scale(1.1);
+       box-shadow: 0 0 10px #FFD89E, 0 0 20px #FFD89E, 0 0 30px #FFD89E; /* Glow effect */
+       transition: 0.5s;
+   }
+   
+                             /* Profile section Start*/
+   .profile {
+       position: relative;
+       display: inline-block;
+   }
+   
+   .profile img {
+       width: 60px;
+       height: 60px;
+       border-radius: 50%;
+       object-fit: cover;
+       cursor: pointer;
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   
+   .profile img:hover {
+       transform: scale(1.1);
+       transition: 0.3s;
+       box-shadow: 0 0 15px 5px rgba(255, 216, 158, 0.6); /* Glow effect */
+   }
+   
+                                 /* Dropdown menu Start */
+   .dropdown-menu {
+       position: absolute;
+       top: 70px; /* Adjust based on the profile image size */
+       right: -5;
+       background: rgba(0, 0, 0, 0.8);
+       border-radius: 10px;
+       padding: 1rem;
+       display: none; /* Initially hidden */
+       flex-direction: column;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+       z-index: 100;
+   }
+   
+   .dropdown-menu.active {
+       display: flex; /* Show when active */
+   }
+   
+   .dropdown-menu a {
+       color: #FFD89E;
+       text-decoration: none;
+       font-size: 1rem;
+       padding: 0.5rem 1rem;
+       border-radius: 5px;
+       transition: background 0.3s, transform 0.3s;
+   }
+   
+   .dropdown-menu a:hover {
+       background: #FFD89E;
+       color: #333;
+       transform: translateX(5px);
+   }
+   
+
+                                /* Dropdown menu End */
+                                /* Profile sectioin end */
+                                /* Header end */
+
+
+
+
+
+                                    /* Middle section Start*/
+   .middle-section {
+       position: absolute;
+       top: 50%; /* Center vertically */
+       left: 50%; /* Center horizontally */
+       transform: translate(-50%, -50%);
+       text-align: center;
+       color: #F8F8FF; /* Updated text color */
+       z-index: 1;
+   }
+   
+   .middle-section h1 {
+       font-size: 3.5rem; /* Slightly larger for emphasis */
+       margin-bottom: 1rem;
+       font-family: 'Playfair Display', serif; /* Updated font for h1 */
+       text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Text shadow for h1 */
+       opacity: 0; /* Start hidden */
+       transform: translateY(-30px); /* Start with upward offset */
+       animation: fadeSlideDown 2s ease-out forwards; /* Animation for h1 */
+   }
+   
+   .middle-section p {
+       font-size: 1.2rem;
+       font-family: 'Montserrat', sans-serif;
+       line-height: 1.8;
+       margin: 0 auto;
+       max-width: 800px;
+       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Text shadow for p */
+       opacity: 0; /* Start hidden */
+       transform: translateY(30px); /* Start with downward offset */
+       animation: fadeSlideUp 2.5s ease-out forwards; /* Animation for p */
+   }
+   
+   /* Animation for h1 - Slide down and fade in */
+   @keyframes fadeSlideDown {
+       0% {
+           opacity: 0;
+           transform: translateY(-50px);
+       }
+       100% {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+   
+   /* Animation for p - Slide up and fade in */
+   @keyframes fadeSlideUp {
+       0% {
+           opacity: 0;
+           transform: translateY(50px);
+       }
+       100% {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+   
+   /* Full-cover section */
+   .full-cover-section {
+        position: absolute;
+        bottom: 0;
+        top: 95%;
+        border-radius:50px 50px 0 0;
+        backdrop-filter: blur(10px);
+        border-color: #F8F8FF;
+        width: 100%;
+        height: 100vh;
+        background-color: #FFD89E;
+        overflow: hidden;
+        transform: translateY(0); /* Default position */
+        transition: transform 0.2s ease-out; /*Smooth animation for the effect */
+        background-image: linear-gradient(rgba(39,39,39,0.6),rgba(48,47,47,0));
+   } 
+   
+
+/* Contact Section */
+.contact-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.contact-container {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ddd;
+}
+
+.contact-btn {
+  padding: 12px;
+  border: none;
+  background: #00bcd4;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #0097a7;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+        /* Footer */
+        section.footer {
+            background-color: #05141F;
+            border-top: 1px solid #ffffff;
+            border-bottom: 1px solid #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FFD89E;
+            border-left: 1px solid #ffffff;
+            border-right: 1px solid #ffffff;
+            display: inline-block;
+            padding: 0 20px;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            display: inline-block;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #FFD89E;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            color: #FFD89E;
+            font-size: 30px;
+            padding: 12px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffffff;
+            transform: scale(1.2);
+            text-shadow: 0 0 10px #FFD89E, 0 0 20px #FFD89E, 0 0 30px #FFD89E;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+   <!-- Full-screen Background Image -->
+   <div class="background-image">
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html">KARNATISM</a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="OG.html">Our Guides</a>
+            <a href="Contact.html">Get in Touch</a>
+            <a href="About.html">About Us</a>
+        </nav>
+        <div class="profile">
+            <img src="./assets/images/profileimg.png" alt="Profile Image" id="profileImage">
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="login.php">Sign In</a>
+                <a href="register.php">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="contact-section">
+        <div class="contact-container">
+          <h1>Get in Touch</h1>
+          <p>If you have any queries, feedback, or issues, send us a message below!</p>
+          <form id="contactForm" method="POST" action="contact.php" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit" class="contact-btn">Send Message</button>
+          </form>
+      
+          <div id="thankYouMessage" style="display:none; margin-top: 20px; font-size: 1.2rem; color: #00ff88;">
+            Thank you for your feedback!
+          </div>
+        </div>
+      </section>
+      
+
+        <!-- Footer -->
+        <section class="footer">
+            <h1>KARNATISM</h1><br>
+            <p>Follow Us</p>
+            <div class="social-icons">
+                <a href="https://github.com" target="_blank" class="icon github"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com" target="_blank" class="icon twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:example@example.com" target="_blank" class="icon email"><i class="fas fa-envelope"></i></a>
+                <a href="https://youtube.com" target="_blank" class="icon youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="copyright">
+                2025 &copy; Karnatism. All rights reserved.
+            </div>
+        </section>
+    </div>
+    <script src="index.js"></script>
+        <script>
+  const form = document.getElementById('contactForm');
+  const thankYouMessage = document.getElementById('thankYouMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch('contact.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      if (data.trim() === "success") {
+        form.reset();
+        form.style.display = "none";
+        thankYouMessage.style.display = "block";
+      } else {
+        alert("Oops! Something went wrong. Please try again later.");
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      alert("Error! Could not send message.");
+    });
+  });
+</script>
+</body>
+</html>
